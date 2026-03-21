@@ -2,7 +2,7 @@
 
 > Training, evaluation, and comparison of 6 instance segmentation models on multi-resolution oil palm UAV imagery.
 
-Companion code for blog post **[B3: Six Models Enter, One Problem Wins](https://sai21112000.github.io)**.
+Live blog post **[B3: Six Models Enter, One Problem Wins](https://sai21112000.github.io/posts/b3-six-models-enter.html)**.
 
 ## Models Compared
 
