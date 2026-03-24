@@ -1,0 +1,5 @@
+names:
+  0: Oil Palm
+path: /content/drive/MyDrive/10Jan_Dataset/03_MsDt
+train: train/images
+val: val/images
