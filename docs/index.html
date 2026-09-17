@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A six-model, multi-GSD benchmark for oil palm instance segmentation and canopy measurement from UAV imagery.">
+  <title>Oil Palm Instance Segmentation — Multi-GSD UAV Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#071713;--surface:#0d251e;--text:#f6f7f1;--muted:#a9bdb5;--line:#24443a;--accent:#42d69b;--lime:#dfff61;--blue:#63a7ff;--serif:"Fraunces",serif;--sans:"DM Sans",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--lime);outline-offset:4px}.shell{width:min(1120px,calc(100% - 40px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;border-bottom:1px solid var(--line)}.brand{font:600 20px/1 var(--serif)}.brand span{color:var(--accent)}.nav-links{display:flex;gap:22px;align-items:center;font-size:13px}.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;background:var(--accent);border:1px solid var(--accent);border-radius:10px;color:#061510;font-weight:800;font-size:13px}.button.secondary{color:var(--text);background:transparent;border-color:var(--line)}.hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;min-height:690px;padding:80px 0}.eyebrow,.kicker{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.hero h1{max-width:720px;margin:16px 0 24px;font:600 clamp(52px,7vw,88px)/.93 var(--serif);letter-spacing:-.05em}.hero h1 em{color:var(--accent);font-style:normal}.hero-copy>p{max-width:650px;color:var(--muted);font-size:19px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.hero-visual{position:relative}.hero-visual img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line);border-radius:50%;box-shadow:0 30px 100px rgba(0,0,0,.45)}.hero-visual:before,.hero-visual:after{content:"";position:absolute;z-index:-1;border:1px solid var(--line);border-radius:50%}.hero-visual:before{inset:-30px}.hero-visual:after{inset:-65px}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden}.stat{padding:28px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;color:var(--lime);font:600 42px/1 var(--serif)}.stat span{display:block;margin-top:8px;color:var(--muted);font-size:12px}.section{padding:110px 0}.section-head{max-width:720px;margin-bottom:44px}.section h2{margin:12px 0 14px;font:600 clamp(38px,5vw,60px)/1 var(--serif);letter-spacing:-.035em}.section-head p{color:var(--muted);font-size:18px}.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{min-height:220px;padding:25px;background:var(--surface);border:1px solid var(--line);border-radius:14px}.card span{color:var(--accent);font-size:11px;font-weight:700}.card h3{margin:34px 0 10px;font:600 23px/1.15 var(--serif)}.card p{margin:0;color:var(--muted);font-size:13px}.results{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:start}.results figure{margin:0}.results img{display:block;width:100%;border:1px solid var(--line);border-radius:14px}.results figcaption{margin-top:10px;color:var(--muted);font-size:11px}.table{overflow:hidden;border:1px solid var(--line);border-radius:14px}.row{display:grid;grid-template-columns:1.5fr repeat(3,.7fr);gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);font-size:12px}.row:last-child{border:0}.row.header{color:var(--muted);background:var(--surface);font-size:10px;font-weight:700;text-transform:uppercase}.row.best{color:var(--lime)}.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}.step{position:relative;min-height:190px;padding:24px;background:var(--surface)}.step strong{color:var(--accent);font-size:11px}.step h3{margin:42px 0 8px;font:600 20px/1.2 var(--serif)}.step p{margin:0;color:var(--muted);font-size:12px}.gsd{display:flex;justify-content:space-between;gap:6px;margin-top:32px}.gsd span{display:grid;place-items:center;width:70px;aspect-ratio:1;border:1px solid var(--line);border-radius:50%;color:var(--muted);font-size:11px}.gsd span:nth-child(4){color:#061510;background:var(--lime);border-color:var(--lime)}.quickstart{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center;padding:48px;background:linear-gradient(135deg,#0d2c23,#15563f);border:1px solid #26765a;border-radius:18px}.quickstart h2{margin:10px 0;font-size:44px}.quickstart p{color:#bfd1ca}.code{margin:0;padding:24px;overflow:auto;background:#04100d;border:1px solid #2c5b4b;border-radius:12px;color:var(--lime);font:13px/1.8 ui-monospace,SFMono-Regular,monospace}.final{padding:120px 0;text-align:center}.final h2{max-width:820px;margin:14px auto 18px;font:600 clamp(44px,7vw,78px)/.98 var(--serif);letter-spacing:-.04em}.final p{color:var(--muted)}.final .actions{justify-content:center}.footer{display:flex;justify-content:space-between;gap:20px;padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+    @media(max-width:820px){.hero,.results{grid-template-columns:1fr}.hero{min-height:auto;padding:90px 0}.hero-visual{max-width:550px;margin:35px auto}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.problem-grid{grid-template-columns:repeat(2,1fr)}.pipeline{grid-template-columns:repeat(2,1fr)}.quickstart{grid-template-columns:1fr}.nav-links a:not(.button){display:none}}
+    @media(max-width:520px){.hero h1{font-size:50px}.section{padding:80px 0}.stats,.problem-grid,.pipeline{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)!important}.gsd{display:grid;grid-template-columns:repeat(4,1fr)}.gsd span{width:100%}.quickstart{padding:28px}.row{grid-template-columns:1.4fr repeat(3,.6fr);padding:11px 9px;font-size:10px}.footer{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header class="shell nav">
+    <a class="brand" href="#">Oil Palm <span>Vision</span></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#problem">Problem</a><a href="#results">Results</a><a href="#pipeline">Pipeline</a>
+      <a class="button" href="https://github.com/Sai21112000/oil-palm-instance-segmentation">View source ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="shell hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AIT Master's thesis · Geospatial AI</p>
+        <h1>Teaching a drone to <em>see.</em></h1>
+        <p>A six-model instance-segmentation benchmark for detecting and measuring oil-palm canopies across eight UAV image resolutions.</p>
+        <div class="actions"><a class="button" href="#results">Explore results</a><a class="button secondary" href="https://sai21112000.github.io/sequences/uav-thesis.html">Read the six-part story ↗</a></div>
+      </div>
+      <figure class="hero-visual"><img src="https://raw.githubusercontent.com/Sai21112000/oil-palm-instance-segmentation/main/rresults/standardized_results_v1/Figure_Qualitative_Grid.png" alt="Qualitative comparison of oil palm instance segmentation models"></figure>
+    </section>
+    <section class="shell stats" aria-label="Research facts">
+      <div class="stat"><strong>6</strong><span>Models compared</span></div>
+      <div class="stat"><strong>8</strong><span>GSD levels tested</span></div>
+      <div class="stat"><strong>0.77</strong><span>Best mean IoU</span></div>
+      <div class="stat"><strong>&gt;80%</strong><span>Annotation time saved</span></div>
+    </section>
+    <section class="shell section" id="problem">
+      <header class="section-head"><p class="kicker">The operational problem</p><h2>Altitude changes the image—and the model.</h2><p>A detector trained at one drone height can fail over the same plantation at another. Ground Sample Distance is the hidden variable connecting flight planning to model reliability.</p></header>
+      <div class="problem-grid">
+        <article class="card"><span>01 · RESOLUTION</span><h3>One pixel changes meaning</h3><p>GSD controls how much physical ground each pixel represents, changing visible canopy detail.</p></article>
+        <article class="card"><span>02 · GENERALIZATION</span><h3>Accuracy shifts with altitude</h3><p>A model trained at 0.03m GSD performed 40% worse at 0.20m on the same plantation.</p></article>
+        <article class="card"><span>03 · OPERATIONS</span><h3>Flight plans become AI inputs</h3><p>Deployment requires choosing altitude, model, speed, and canopy precision as one system.</p></article>
+      </div>
+    </section>
+    <section class="shell section" id="results">
+      <header class="section-head"><p class="kicker">Six models enter</p><h2>The simplest pipeline won.</h2><p>YOLOv11 standalone delivered the best mean IoU while running roughly ten times faster than the YOLO+SAM hybrid.</p></header>
+      <div class="results">
+        <figure><img src="https://raw.githubusercontent.com/Sai21112000/oil-palm-instance-segmentation/main/rresults/standardized_results_v1/Figure_Performance_by_Characteristics.png" alt="Performance comparison across oil palm segmentation models"><figcaption>Standardized comparison across model characteristics.</figcaption></figure>
+        <div class="table" role="table" aria-label="Model benchmark results">
+          <div class="row header" role="row"><span>Model</span><span>IoU</span><span>F1</span><span>ms/img</span></div>
+          <div class="row best" role="row"><span>YOLOv11l-seg</span><span>0.77</span><span>0.698</span><span>56</span></div>
+          <div class="row" role="row"><span>Hybrid-v11-SAM</span><span>0.74</span><span>0.681</span><span>~600</span></div>
+          <div class="row" role="row"><span>Mask R-CNN</span><span>0.712</span><span>0.727</span><span>~340</span></div>
+          <div class="row" role="row"><span>YOLOv8l-seg</span><span>0.71</span><span>0.672</span><span>68</span></div>
+          <div class="row" role="row"><span>Hybrid-v8-SAM</span><span>0.69</span><span>0.651</span><span>~580</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="shell section" id="pipeline">
+      <header class="section-head"><p class="kicker">Agent-orchestrated pipeline</p><h2>From gold labels to canopy area.</h2><p>The best trained model becomes a Teacher Agent, scaling annotation before the full benchmark and physical measurement stages.</p></header>
+      <div class="pipeline">
+        <article class="step"><strong>01</strong><h3>Gold standard</h3><p>500 manually annotated UAV images establish trusted labels.</p></article>
+        <article class="step"><strong>02</strong><h3>Teacher Agent</h3><p>YOLOv11 propagates annotations across tiled GSD variants.</p></article>
+        <article class="step"><strong>03</strong><h3>Model suite</h3><p>Six architectures train and evaluate under the same protocol.</p></article>
+        <article class="step"><strong>04</strong><h3>Biometry</h3><p>Polygon masks become canopy area and equivalent diameter.</p></article>
+      </div>
+      <div class="gsd" aria-label="Ground sample distances tested"><span>.03m</span><span>.05m</span><span>.07m</span><span>.10m</span><span>.12m</span><span>.15m</span><span>.17m</span><span>.20m</span></div>
+    </section>
+    <section class="shell section">
+      <div class="quickstart">
+        <div><p class="kicker">Reproduce the work</p><h2>Open research, end to end.</h2><p>The repository contains model code, evaluation results, notebooks, and the full multi-GSD pipeline.</p></div>
+        <pre class="code"><code>git clone https://github.com/Sai21112000/oil-palm-instance-segmentation.git
+cd oil-palm-instance-segmentation
+pip install -r requirements.txt
+
+# Explore notebooks, models, src, and results</code></pre>
+      </div>
+    </section>
+    <section class="shell final">
+      <p class="kicker">Research made operational</p>
+      <h2>Choose the flight and the model together.</h2>
+      <p>Explore the source, results, and complete six-part technical story.</p>
+      <div class="actions"><a class="button" href="https://github.com/Sai21112000/oil-palm-instance-segmentation">Explore on GitHub ↗</a><a class="button secondary" href="https://sai21112000.github.io/sequences/uav-thesis.html">Read the sequence ↗</a></div>
+    </section>
+  </main>
+  <footer class="shell footer"><span>Oil Palm Instance Segmentation · MIT License</span><span>Sai Teja Vaidya · Asian Institute of Technology</span></footer>
+</body>
+</html>

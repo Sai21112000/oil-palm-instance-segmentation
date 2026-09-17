@@ -1,5 +1,7 @@
 # Oil Palm Instance Segmentation — AIT Master's Thesis
 
+[![Live Research Site](https://img.shields.io/badge/Live_research_site-Open-159B76?style=for-the-badge)](https://sai21112000.github.io/oil-palm-instance-segmentation/)
+
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 [![YOLOv11](https://img.shields.io/badge/YOLO-v11l--seg-brightgreen)](https://github.com/ultralytics/ultralytics)
 [![Mask RCNN](https://img.shields.io/badge/Mask-RCNN-orange)](https://github.com/matterport/Mask_RCNN)
